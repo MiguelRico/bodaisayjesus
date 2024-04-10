@@ -1,4 +1,9 @@
-$( document ).ready(function() {
+$("#updateGuests").on('click touchstart', 
+    function onUpdateGuestsContent() {
+        updateGuestsContent();
+    }
+);
+
 function updateGuestsContent() {
     // Get dropdwon value
     var totalGuests = $('#select-guests-content').find('select[id="totalGuests"]').val();
@@ -25,7 +30,7 @@ function updateGuestsContent() {
                     </div>
                     
                     <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                        <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
+                        <input id="resetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
                     </div>
                 </div>
             </div>
@@ -86,7 +91,7 @@ function updateGuestsContent() {
                         </div>
                         
                         <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
+                            <input id="resetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
                         </div>
                     </div>
                 </div>
@@ -110,8 +115,7 @@ function updateGuestsContent() {
     $('#vertical-carousel').carousel('next');
 }
 
-
-function resetGuestsContent() {		
+function resetGuestsContent() {
     // Remove finish guests page component
     $("#finish-guests-entry").remove();
     $("#finish-guests-item").remove();
@@ -134,8 +138,8 @@ function resetGuestsContent() {
     $("#clock-entry").remove();
     $("#clock-item").remove();
     // Activate guests page
-    $("#select-guests-entry").addClass("active");
-    $("#select-guests-item").addClass("active");
+    //$("#select-guests-entry").addClass("active");
+    //$("#select-guests-item").addClass("active");
 }
 
 function addAllergenicAndTransportPage(position) {
@@ -184,7 +188,7 @@ function addAllergenicAndTransportPage(position) {
                 
                     <div class="d-flex flex-wrap row align-content-center">
                         <div class="col form_field_outer pt-2 pb-2">
-                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
+                            <input id="allergicResetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
                         </div>
                         
                         <div class="col form_field_outer pt-2 pb-2">
@@ -196,6 +200,19 @@ function addAllergenicAndTransportPage(position) {
             </div>					
         </div>
     `);
+
+    $("#allergicResetGuestsContent").on('click touchstart', 
+        function onResetGuestsContent() {
+            const difference = position - 4;
+            console.log(difference);
+            for (let i = 0; i < difference; i++) {
+                $('#vertical-carousel').carousel('prev').delay( 800 );
+            }
+            resetGuestsContent();
+            $("#select-guests-entry").addClass("active").delay( 10000 );
+            $("#select-guests-item").addClass("active").delay( 10000 );
+        }
+    );
 }
 
 function finishGuests() {
@@ -235,7 +252,7 @@ function finishGuests() {
                     
                     <div class="d-flex flex-wrap row align-content-center">
                         <div class="col form_field_outer pt-2 pb-2">
-                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
+                            <input id="resetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
                         </div>
                         <div class="col form_field_outer pt-2 pb-2">
                             <input type="button" class="btn btn-light" value="Actualizar confirmación" onclick="finishGuests()" />
@@ -567,7 +584,6 @@ function addOtherPages() {
 function get15dayFromNow() {
     return new Date("Jul 27, 2024 19:00:00");
 }
-});
 
 
 
