@@ -203,7 +203,7 @@ function addAllergenicAndTransportPage(position) {
 
     $("#allergicResetGuestsContent").on('click touchstart', 
         function onResetGuestsContent() {
-            const difference = position - 4;
+            const difference = position - 3;
             console.log(difference);
             for (let i = 0; i < difference; i++) {
                 $('#vertical-carousel').carousel('prev').delay( 800 );
