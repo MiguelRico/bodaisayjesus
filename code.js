@@ -206,9 +206,9 @@ function addAllergenicAndTransportPage(position) {
             const difference = position - 3;
             console.log(difference);
             for (let i = 0; i < difference; i++) {
-                $('#vertical-carousel').carousel('prev').delay( 800 );
+                $('#vertical-carousel').carousel('prev');
             }
-            resetGuestsContent();
+            //resetGuestsContent();
 
             //$("#guests-entry").remove();
             //$("#guests-item").remove();
