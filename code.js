@@ -210,13 +210,13 @@ function addAllergenicAndTransportPage(position) {
             }
             resetGuestsContent();
 
-            $("#guests-entry").remove();
-            $("#guests-item").remove();
+            //$("#guests-entry").remove();
+            //$("#guests-item").remove();
             // Remove second guests page component
-            $("#guests-entry-2").remove();
-            $("#guests-item-2").remove();
-            $("#allergic-entry").remove();
-            $("#allergic-item").remove();
+            //$("#guests-entry-2").remove();
+            //$("#guests-item-2").remove();
+            //$("#allergic-entry").remove();
+            //$("#allergic-item").remove();
             //$("#select-guests-entry").addClass("active").delay( 10000 );
             //$("#select-guests-item").addClass("active").delay( 10000 );
         }
