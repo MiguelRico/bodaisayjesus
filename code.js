@@ -120,11 +120,11 @@ function resetGuestsContent() {
     $("#finish-guests-entry").remove();
     $("#finish-guests-item").remove();
     // Remove first guests page component
-    $("#guests-entry").remove();
-    $("#guests-item").remove();
+    //$("#guests-entry").remove();
+    //$("#guests-item").remove();
     // Remove second guests page component
-    $("#guests-entry-2").remove();
-    $("#guests-item-2").remove();
+    //$("#guests-entry-2").remove();
+    //$("#guests-item-2").remove();
     // Remove allergic component
     //$("#allergic-entry").remove();
     //$("#allergic-item").remove();
@@ -209,6 +209,12 @@ function addAllergenicAndTransportPage(position) {
                 $('#vertical-carousel').carousel('prev').delay( 800 );
             }
             resetGuestsContent();
+
+            $("#guests-entry").remove();
+            $("#guests-item").remove();
+            // Remove second guests page component
+            $("#guests-entry-2").remove();
+            $("#guests-item-2").remove();
             $("#allergic-entry").remove();
             $("#allergic-item").remove();
             //$("#select-guests-entry").addClass("active").delay( 10000 );
