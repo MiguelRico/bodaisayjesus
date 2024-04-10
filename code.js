@@ -203,11 +203,12 @@ function addAllergenicAndTransportPage(position) {
 
     $("#allergicResetGuestsContent").on('click touchstart', 
         function onResetGuestsContent() {
-            const difference = position - 3;
+            const difference = position - 4;
             console.log(difference);
-            for (let i = 0; i < difference; i++) {
+            
                 $('#vertical-carousel').carousel('prev');
-            }
+            $('#vertical-carousel').carousel('prev');
+            
             //resetGuestsContent();
 
             //$("#guests-entry").remove();
