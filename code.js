@@ -1,3 +1,4 @@
+$( document ).ready(function() {
 function updateGuestsContent() {
     // Get dropdwon value
     var totalGuests = $('#select-guests-content').find('select[id="totalGuests"]').val();
@@ -566,6 +567,7 @@ function addOtherPages() {
 function get15dayFromNow() {
     return new Date("Jul 27, 2024 19:00:00");
 }
+});
 
 
 
