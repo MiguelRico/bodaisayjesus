@@ -126,8 +126,8 @@ function resetGuestsContent() {
     $("#guests-entry-2").remove();
     $("#guests-item-2").remove();
     // Remove allergic component
-    $("#allergic-entry").remove();
-    $("#allergic-item").remove();
+    //$("#allergic-entry").remove();
+    //$("#allergic-item").remove();
     // Remove account component
     $("#account-entry").remove();
     $("#account-item").remove();
@@ -209,8 +209,10 @@ function addAllergenicAndTransportPage(position) {
                 $('#vertical-carousel').carousel('prev').delay( 800 );
             }
             resetGuestsContent();
-            $("#select-guests-entry").addClass("active").delay( 10000 );
-            $("#select-guests-item").addClass("active").delay( 10000 );
+            $("#allergic-entry").remove();
+            $("#allergic-item").remove();
+            //$("#select-guests-entry").addClass("active").delay( 10000 );
+            //$("#select-guests-item").addClass("active").delay( 10000 );
         }
     );
 }
