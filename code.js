@@ -1,9 +1,3 @@
-$("#updateGuests").on('click touchstart', 
-    function onUpdateGuestsContent() {
-        updateGuestsContent();
-    }
-);
-
 function updateGuestsContent() {
     // Get dropdwon value
     var totalGuests = $('#select-guests-content').find('select[id="totalGuests"]').val();
@@ -30,7 +24,7 @@ function updateGuestsContent() {
                     </div>
                     
                     <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                        <input id="resetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
+                        <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
                     </div>
                 </div>
             </div>
@@ -91,7 +85,7 @@ function updateGuestsContent() {
                         </div>
                         
                         <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                            <input id="resetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
+                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
                         </div>
                     </div>
                 </div>
@@ -116,18 +110,19 @@ function updateGuestsContent() {
 }
 
 function resetGuestsContent() {
+    $('#vertical-carousel').carousel(4);
     // Remove finish guests page component
     $("#finish-guests-entry").remove();
     $("#finish-guests-item").remove();
     // Remove first guests page component
-    //$("#guests-entry").remove();
-    //$("#guests-item").remove();
+    $("#guests-entry").remove();
+    $("#guests-item").remove();
     // Remove second guests page component
-    //$("#guests-entry-2").remove();
-    //$("#guests-item-2").remove();
+    $("#guests-entry-2").remove();
+    $("#guests-item-2").remove();
     // Remove allergic component
-    //$("#allergic-entry").remove();
-    //$("#allergic-item").remove();
+    $("#allergic-entry").remove();
+    $("#allergic-item").remove();
     // Remove account component
     $("#account-entry").remove();
     $("#account-item").remove();
@@ -137,9 +132,6 @@ function resetGuestsContent() {
     // Remove clock component
     $("#clock-entry").remove();
     $("#clock-item").remove();
-    // Activate guests page
-    //$("#select-guests-entry").addClass("active");
-    //$("#select-guests-item").addClass("active");
 }
 
 function addAllergenicAndTransportPage(position) {
@@ -188,7 +180,7 @@ function addAllergenicAndTransportPage(position) {
                 
                     <div class="d-flex flex-wrap row align-content-center">
                         <div class="col form_field_outer pt-2 pb-2">
-                            <input id="allergicResetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
+                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
                         </div>
                         
                         <div class="col form_field_outer pt-2 pb-2">
@@ -200,28 +192,6 @@ function addAllergenicAndTransportPage(position) {
             </div>					
         </div>
     `);
-
-    $("#allergicResetGuestsContent").on('click touchstart', 
-        function onResetGuestsContent() {
-            const difference = position - 4;
-            console.log(difference);
-            
-                $('#vertical-carousel').carousel('prev');
-            $('#vertical-carousel').carousel('prev');
-            
-            //resetGuestsContent();
-
-            //$("#guests-entry").remove();
-            //$("#guests-item").remove();
-            // Remove second guests page component
-            //$("#guests-entry-2").remove();
-            //$("#guests-item-2").remove();
-            //$("#allergic-entry").remove();
-            //$("#allergic-item").remove();
-            //$("#select-guests-entry").addClass("active").delay( 10000 );
-            //$("#select-guests-item").addClass("active").delay( 10000 );
-        }
-    );
 }
 
 function finishGuests() {
@@ -229,7 +199,7 @@ function finishGuests() {
     $("#allergic-item").addClass("active");
 
     // Get dropdwon value
-    var totalGuests = $('#select-guests-content').find('select[id="totalGuests"]').val();
+    var totalGuests = $('#select-guests-content').find('input[id="totalGuests"]').val();
 
     var finishPagePosition = 7;
     if (totalGuests > 5) {
@@ -261,7 +231,7 @@ function finishGuests() {
                     
                     <div class="d-flex flex-wrap row align-content-center">
                         <div class="col form_field_outer pt-2 pb-2">
-                            <input id="resetGuestsContent" type="button" class="btn btn-light" value="Volver a empezar" />
+                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
                         </div>
                         <div class="col form_field_outer pt-2 pb-2">
                             <input type="button" class="btn btn-light" value="Actualizar confirmación" onclick="finishGuests()" />
@@ -593,6 +563,5 @@ function addOtherPages() {
 function get15dayFromNow() {
     return new Date("Jul 27, 2024 19:00:00");
 }
-
 
 
