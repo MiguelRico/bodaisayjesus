@@ -34,9 +34,9 @@
                 <!-- data-bs wrap: whether the carousel should cycle continuously (i.e go from first to last and vice-versa) -->
                 <div id="vertical-carousel" class="carousel slide" data-bs-touch="true" data-bs-ride="carousel" data-bs-interval="false" data-bs-wrap="false">
                     
-					<!-- Carousel slide indicators -->
+		    <!-- Carousel slide indicators -->
                     <ol class="carousel-indicators">
-						<li data-bs-target="#vertical-carousel" data-bs-slide-to="0" class="active"></li>
+			<li data-bs-target="#vertical-carousel" data-bs-slide-to="0" class="active"></li>
                         <li data-bs-target="#vertical-carousel" data-bs-slide-to="1"></li>
                         <li data-bs-target="#vertical-carousel" data-bs-slide-to="2"></li>
                         <li data-bs-target="#vertical-carousel" data-bs-slide-to="3"></li>
@@ -47,6 +47,17 @@
 					
                         <!-- Carousel item represents each slide -->
 						<div id="home-item" class="carousel-item active">
+
+			<div class="col-12 form_field_outer">
+                    <button class="unclickable carousel-control-prev" type="button" data-bs-target="#vertical-carousel" data-bs-slide="prev">
+                        <span class="clickable carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="unclickable carousel-control-next" type="button" data-bs-target="#vertical-carousel" data-bs-slide="next">
+                        <span class="clickable carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+			</div>
                             <div class="container" style="height: 100%;">
                                 <div class="row align-items-center justify-content-center text-center" style="height: 100%;">
                                     <div class="col-12">
