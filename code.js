@@ -373,8 +373,12 @@ function finishGuests() {
 function sendConfirmation() {
     // Get values
     var guests = [];
-    $('.guests').each(function() {
-        guests.push($(this).val());
+    $('.guests').each(function(index) {
+        if(index === 0) {
+            guests.push("- " + $(this).val() + "<br>");
+        } else {
+            guests.push(" " + $(this).val() + "<br>");
+        }
     });
     var alergias = $('#allergic-item').find('textarea[id="alergias"]').val();
     var busIda = $('#allergic-item').find('select[id="busIda"]').val();
@@ -390,7 +394,7 @@ function sendConfirmation() {
         //To: 'mrico.dev@gmail.com',
         From : "miguel.rico.vazquez@gmail.com",
         Subject : "This is the subject",
-        Body : "Invitados: " + guests.join(', ') + ".Alergias: " + alergias + ". Bus ida: " + busIda + ". Bus vuelta: " + busVuelta
+        Body : "- Invitados:<br>" + guests.join('- ') + ".<br><br>- Alergias: " + alergias + ".<br>- Bus ida: " + busIda + ".<br>- Bus vuelta: " + busVuelta
     }).then((response) => {
         return onSendEmail(response)
     });
@@ -621,15 +625,15 @@ function addOtherPages() {
 
     $('#clock-c').countdown(get15dayFromNow(), function(event) {
         var $this = $(this).html(event.strftime(''
-        + '<span class="h1 font-weight-bold">%D</span> Day%!d'
-        + '<span class="h1 font-weight-bold">%H</span> Hr'
-        + '<span class="h1 font-weight-bold">%M</span> Min'
-        + '<span class="h1 font-weight-bold">%S</span> Sec'));
+        + '<span class="h1 font-weight-bold">%D</span> días%!d <br>'
+        + '<span class="h1 font-weight-bold">%H</span> horas <br>'
+        + '<span class="h1 font-weight-bold">%M</span> minutos <br>'
+        + '<span class="h1 font-weight-bold">%S</span> segundos'));
     });
 }
 
 function get15dayFromNow() {
-    return new Date("Jul 27, 2024 19:00:00");
+    return new Date("Jul 20, 2024 18:30:00");
 }
 
 
