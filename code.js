@@ -24,7 +24,8 @@ function updateGuestsContent() {
                     </div>
                     
                     <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                        <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
+                        <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                        <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
                     </div>
                 </div>
             </div>
@@ -85,7 +86,9 @@ function updateGuestsContent() {
                         </div>
                         
                         <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
+                            <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
+                            <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                            <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
                         </div>
                     </div>
                 </div>
@@ -134,6 +137,14 @@ function resetGuestsContent() {
     $("#clock-item").remove();
 }
 
+function nextPage() {
+    $('#vertical-carousel').carousel('next');
+}
+
+function prevPage() {
+    $('#vertical-carousel').carousel('prev');
+}
+
 function addAllergenicAndTransportPage(position) {
     // Add carousel indicator for allergic
     $("#vertical-carousel ol").append(`
@@ -161,7 +172,7 @@ function addAllergenicAndTransportPage(position) {
                     <div class="col-12 form_field_outer mt-2">
                         <div class="row form_field_outer_row border rounded">
                             <div class="form-group col-6 mt-2 mb-2">                            
-                                <label for="busIda" class="form-label fw-bold">Bus ida (17:00)</label>
+                                <label for="busIda" class="form-label fw-bold">Ida (17:00)</label>
                                 <select name="busIda" id="busIda" class="form-select form-select-lg">
                                     <option value="No" selected>No</option>
                                     <option value="Si">Si</option>
@@ -169,7 +180,7 @@ function addAllergenicAndTransportPage(position) {
                             </div>
 
                             <div class="form-group col-6 mt-2 mb-2">                            
-                                <label for="busVuelta" class="form-label fw-bold">Bus Vuelta (06:00)</label>
+                                <label for="busVuelta" class="form-label fw-bold">Vuelta (06:00)</label>
                                 <select name="busVuelta" id="busVuelta" class="form-select form-select-lg">
                                     <option value="No" selected>No</option>
                                     <option value="Si">Si</option>
@@ -179,11 +190,9 @@ function addAllergenicAndTransportPage(position) {
                     </div>
                 
                     <div class="d-flex flex-wrap row align-content-center">
-                        <div class="col form_field_outer pt-2 pb-2">
-                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
-                        </div>
-                        
-                        <div class="col form_field_outer pt-2 pb-2">
+                        <div class="col form_field_outer pt-2 pb-2">                        
+                            <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
+                            <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
                             <input id="finishGuests" type="button" class="btn btn-light" value="Finalizar" onclick="finishGuests()" />
                         </div>
                     </div>
@@ -199,7 +208,7 @@ function finishGuests() {
     $("#allergic-item").addClass("active");
 
     // Get dropdwon value
-    var totalGuests = $('#select-guests-content').find('input[id="totalGuests"]').val();
+    var totalGuests = $('#select-guests-content').find('select[id="totalGuests"]').val();
 
     var finishPagePosition = 7;
     if (totalGuests > 5) {
@@ -231,13 +240,9 @@ function finishGuests() {
                     
                     <div class="d-flex flex-wrap row align-content-center">
                         <div class="col form_field_outer pt-2 pb-2">
-                            <input type="button" class="btn btn-light" value="Volver a empezar" onclick="resetGuestsContent()" />
-                        </div>
-                        <div class="col form_field_outer pt-2 pb-2">
-                            <input type="button" class="btn btn-light" value="Actualizar confirmación" onclick="finishGuests()" />
-                        </div>                            
-                        <div class="col form_field_outer pt-2 pb-2">
-                            <input id="confirm-guests-button" type="button" class="btn btn-light" value="Enviar confirmación" onclick="sendConfirmation()" />
+                            <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                            <input type="button" class="btn btn-light" value="Actualizar" onclick="finishGuests()" />
+                            <input id="confirm-guests-button" type="button" class="btn btn-light" value="Enviar" onclick="sendConfirmation()" />
                         </div>
                     </div>
 
@@ -262,29 +267,29 @@ function finishGuests() {
 
     var hasError = false;
     for (let i = 0; i < guests.length; i++) {
-        if (typeof guests[i] !== 'undefined' && guests[i] != '') {
-            $("#finish-guests-content").append(`
-                <div class="form-group col-6 mb-2">
-                    <p style="margin-left: 1rem;">Invitado `+ (i + 1) + `: ` + guests[i] + `</p>
-                </div>
-            `);
-        } else {
+        if (typeof guests[i] === 'undefined' || guests[i] == '') {
             hasError = true;
-            $("#finish-guests-content").append(`
-                <div class="form-group col-6 mb-2">
-                    <p class="text-danger" style="margin-left: 1rem;">Invitado `+ (i + 1) + `: No informado.</p>
-                </div>
-            `);
+            break;
         }
     }
 
     if (hasError === true) {
         $("#confirm-guests-button").prop("disabled",true);
-        $("#send-email-error").append(`
-        <div class="alert alert-danger" role="alert">
-            No ha informado todos los invitados. Por favor informe los invitados que faltan y actualice la confirmación.
-        </div>
-    `);
+        $("#finish-guests-content").append(`
+            <div class="form-group col-12 mb-2">
+                <div class="alert alert-danger" role="alert">
+                    No ha informado todos los invitados. Por favor informe los invitados que faltan y actualice la confirmación.
+                </div>
+            </div>
+        `);
+    } else {
+        $("#finish-guests-content").append(`
+            <div class="form-group col-12 mb-2">
+                <div class="alert alert-success" role="alert">
+                    ` + guests.join(', ') + `
+                </div>
+            </div>
+        `);
     }
 
     var alergias = $('#allergic-item').find('textarea[id="alergias"]').val();
@@ -351,12 +356,6 @@ function sendConfirmation() {
 
 function onSendEmail(response) {
     if(response === 'OK') {
-        resetGuestsContent();
-
-        // Remove finish guests page component
-        $("#select-guests-entry").remove();
-        $("#select-guests-item").remove();
-
         // Add carousel indicator for success
         $("#vertical-carousel ol").append(`
             <li id="success-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="4" class="active"></li>
@@ -375,7 +374,34 @@ function onSendEmail(response) {
             </div>
         `);
 
-        addOtherPages();        
+        // Remove finish guests page component
+        $("#select-guests-entry").remove();
+        $("#select-guests-item").remove(); 
+
+        $('#vertical-carousel').carousel(4);
+        // Remove finish guests page component
+        $("#finish-guests-entry").remove();
+        $("#finish-guests-item").remove();
+        // Remove first guests page component
+        $("#guests-entry").remove();
+        $("#guests-item").remove();
+        // Remove second guests page component
+        $("#guests-entry-2").remove();
+        $("#guests-item-2").remove();
+        // Remove allergic component
+        $("#allergic-entry").remove();
+        $("#allergic-item").remove();
+        // Remove account component
+        $("#account-entry").remove();
+        $("#account-item").remove();
+        // Remove timeline component
+        $("#account-entry").remove();
+        $("#account-item").remove();
+        // Remove clock component
+        $("#clock-entry").remove();
+        $("#clock-item").remove();
+
+        addOtherPages();       
     } else {
         $("#send-email-error").append(`
             <div class="alert alert-danger" role="alert">
