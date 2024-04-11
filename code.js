@@ -22,10 +22,16 @@ function updateGuestsContent() {
                         <div id="guests-content" class="row form_field_outer_row border rounded align-items-center justify-content-around pt-2 pb-2">
                         </div>
                     </div>
-                    
-                    <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                        <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                        <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
+
+                    <div class="col-12 form_field_outer">
+                        <div class="d-flex justify-content-between">
+                            <div class="col-6 form_field_outer pt-2 pb-2 text-center"">
+                                <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                            </div>
+
+                            <div class="col-6 form_field_outer pt-2 pb-2 text-center">
+                                <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
+                            </div>
                     </div>
                 </div>
             </div>
@@ -84,11 +90,20 @@ function updateGuestsContent() {
                             <div id="guests-content-2" class="row form_field_outer_row border rounded align-items-center justify-content-around pt-2 pb-2">
                             </div>
                         </div>
-                        
-                        <div class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                            <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
-                            <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                            <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
+
+                        <div class="col-12 form_field_outer">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-4 form_field_outer pt-2 pb-2 text-start">
+                                    <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
+                                </div>
+
+                                    <div class="col-4 form_field_outer pt-2 pb-2 text-center">
+                                    <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                                </div>
+
+                                <div class="col-4 form_field_outer pt-2 pb-2 text-end">
+                                    <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -188,13 +203,20 @@ function addAllergenicAndTransportPage(position) {
                             </div>
                         </div>
                     </div>
-                
-                    <div class="d-flex flex-wrap row align-content-center">
-                        <div class="col form_field_outer pt-2 pb-2">                        
-                            <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
-                            <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                            <input id="finishGuests" type="button" class="btn btn-light" value="Finalizar" onclick="finishGuests()" />
-                        </div>
+
+                    <div class="col-12 form_field_outer">
+                        <div class="d-flex justify-content-between">
+                            <div class="col-4 form_field_outer pt-2 pb-2 text-start">
+                                <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
+                            </div>
+
+                                <div class="col-4 form_field_outer pt-2 pb-2 text-center">
+                                <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                            </div>
+
+                            <div class="col-4 form_field_outer pt-2 pb-2 text-end">
+                                <input id="finishGuests" type="button" class="btn btn-light" value="Finalizar" onclick="finishGuests()" />
+                            </div>
                     </div>
                 </div>
                 
@@ -238,16 +260,27 @@ function finishGuests() {
                         </div>
                     </div>
                     
-                    <div class="d-flex flex-wrap row align-content-center">
-                        <div class="col form_field_outer pt-2 pb-2">
-                            <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                            <input type="button" class="btn btn-light" value="Actualizar" onclick="finishGuests()" />
-                            <input id="confirm-guests-button" type="button" class="btn btn-light" value="Enviar" onclick="sendConfirmation()" />
+                    <div class="col-12 form_field_outer">
+                        <div class="d-flex justify-content-between">
+                            <div class="col-4 form_field_outer pt-2 pb-2 text-start">
+                                <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
+                                </div>
+
+                                <div class="col-4 form_field_outer pt-2 pb-2 text-center">
+                                <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
+                                </div>
+
+                                <div class="col-4 form_field_outer pt-2 pb-2 text-end">
+                                <input type="button" class="btn btn-light" value="Actualizar" onclick="finishGuests()" />
+                            </div>
+                            
+                        </div>
+                            <div class="col-12 form_field_outer pt-2 pb-2">
+                                <input id="confirm-guests-button" type="button" class="btn btn-light w-100" value="Enviar" onclick="sendConfirmation()" />
+                            </div>
                         </div>
                     </div>
-
-                    <div id="send-email-error" class="col-12 form_field_outer align-items-center pt-2 pb-2 text-center">
-                    </div>
+                    
                 </div>
             </div>
         </div>
