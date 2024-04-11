@@ -22,11 +22,11 @@ html, body {
   margin-right: 0;
   margin-left: 0;
 }
-
 .carousel {
   border: 8px solid rgb(212, 212, 212);
   border-radius: 8px;
 }
+
 
 .carousel-inner, .carousel, .carousel-item, .carousel-container {
   height: 100%;
