@@ -34,7 +34,7 @@ function updateGuestsContent() {
                             </div>
                     </div>
 
-                    <div class="d-flex justify-content-between">
+                    <div class="col-12 form_field_outer">
                     <button class="unclickable carousel-control-prev" type="button" data-bs-target="#vertical-carousel" data-bs-slide="prev">
                         <span class="clickable carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
