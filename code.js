@@ -33,6 +33,17 @@ function updateGuestsContent() {
                                 <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
                             </div>
                     </div>
+
+                    <div class="d-flex justify-content-between">
+                    <button class="unclickable carousel-control-prev" type="button" data-bs-target="#vertical-carousel" data-bs-slide="prev">
+                        <span class="clickable carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="unclickable carousel-control-next" type="button" data-bs-target="#vertical-carousel" data-bs-slide="next">
+                        <span class="clickable carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
                 </div>
             </div>
         </div>
