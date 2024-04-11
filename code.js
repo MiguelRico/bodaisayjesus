@@ -386,8 +386,8 @@ function sendConfirmation() {
     
     Email.send({
         SecureToken : "b64a7a8f-996b-49b2-93fe-d854106a36bb",
-        //To : 'isabenabat@gmail.com',
-        To: 'mrico.dev@gmail.com',
+        To : 'isabenabat@gmail.com',
+        //To: 'mrico.dev@gmail.com',
         From : "miguel.rico.vazquez@gmail.com",
         Subject : "This is the subject",
         Body : "Invitados: " + guests.join(', ') + ".Alergias: " + alergias + ". Bus ida: " + busIda + ". Bus vuelta: " + busVuelta
