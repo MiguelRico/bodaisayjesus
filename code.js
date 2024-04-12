@@ -13,9 +13,9 @@ function updateGuestsContent() {
     $("#carousel-inner").append(`
         <div id="guests-item" class="carousel-item">
             <div class="container" style="height: 100%;">
-                <div class="d-flex flex-wrap align-content-around justify-content-around" style="height: 100%;">
-                    <div class="col-12 form_sec_outer_task text-center mb-2">
-                        <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
+                <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
+                        <h4 class="frm_section_n fw-bold text-center">Confirmar invitados</h4>
                     </div>
                     
                     <div class="col-12 form_field_outer">
@@ -23,7 +23,7 @@ function updateGuestsContent() {
                         </div>
                     </div>
 
-                    <div class="col-12 form_field_outer pt-2 pb-2">
+                    <div class="col-12 form_field_outer pb-3">
                         <div class="d-flex justify-content-center">
                             <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
                         </div>
@@ -76,8 +76,8 @@ function updateGuestsContent() {
         $("#carousel-inner").append(`
             <div id="guests-item-2" class="carousel-item">
                 <div class="container" style="height: 100%;">
-                    <div class="d-flex flex-wrap align-content-around justify-content-around" style="height: 100%;">
-                        <div class="col-12 form_sec_outer_task text-center mb-2">
+                    <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                        <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
                             <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
                         </div>
                         
@@ -86,7 +86,7 @@ function updateGuestsContent() {
                             </div>
                         </div>
 
-                        <div class="col-12 form_field_outer pt-2 pb-2">
+                        <div class="col-12 form_field_outer mb-3">
                             <div class="d-flex justify-content-center">
                                 <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
                             </div>
@@ -156,8 +156,8 @@ function addAllergenicAndTransportPage(position) {
     $("#carousel-inner").append(`
         <div id="allergic-item" class="carousel-item">
             <div class="container" style="height: 100%;">								
-                <div class="d-flex flex-wrap align-content-around justify-content-around" style="height: 100%;">
-                    <div class="col-12 form_sec_outer_task text-center mb-4">
+                <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
                         <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Alergias y transporte</h4>
                     </div>
                     
@@ -190,13 +190,13 @@ function addAllergenicAndTransportPage(position) {
                         </div>
                     </div>
                     
-                    <div class="col-12 form_field_outer pt-2 pb-2">
+                    <div class="col-12 form_field_outer mb-3">
                             <div class="row justify-content-center">
-                                <div class="col-12 pt-2 pb-2 text-center">
+                                <div class="col-12 pb-2 text-center">
                                     <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
                                 </div>
 
-                                <div class="col-12 pt-2 pb-4 text-center">
+                                <div class="col-12 text-center">
                                     <input id="finishGuests" type="button" class="btn btn-light w-50" value="Finalizar" onclick="finishGuests()" />
                                 </div>
                             </div>
@@ -233,8 +233,8 @@ function finishGuests() {
     $("#carousel-inner").append(`
         <div id="finish-guests-item" class="carousel-item">
             <div id="finish-guests-container" class="container" style="height: 100%;">
-                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 100%;">
-                    <div class="col-12 form_sec_outer_task text-center mb-2">
+                <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
                         <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
                     </div>
                     
@@ -243,20 +243,20 @@ function finishGuests() {
                         </div>
                     </div>
 
-                    <div class="col-12 form_field_outer pt-2 pb-2">
-                            <div class="row justify-content-center">
-                                <div class="col-12 pt-2 pb-2 text-center">
-                                    <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
-                                </div>
-
-                                <div class="col-12 pt-2 pb-2 text-center">
-                                    <input type="button" class="btn btn-light w-50" value="Actualizar" onclick="finishGuests()" />
-                                </div>
-
-                                <div class="col-12 pt-2 pb-4 text-center">
-                                <input id="confirm-guests-button" type="button" class="btn btn-light w-50" value="Enviar" onclick="sendConfirmation()" />
-                                </div>
+                    <div class="col-12 form_field_outer mb-3">
+                        <div class="row justify-content-center">
+                            <div class="col-12 mb-2 text-center">
+                                <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
                             </div>
+
+                            <div class="col-12 mb-2 text-center">
+                                <input type="button" class="btn btn-light w-50" value="Actualizar" onclick="finishGuests()" />
+                            </div>
+
+                            <div class="col-12 text-center">
+                            <input id="confirm-guests-button" type="button" class="btn btn-light w-50" value="Enviar" onclick="sendConfirmation()" />
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -290,9 +290,9 @@ function finishGuests() {
             </div>
         `);
     } else {
-        $("#confirm-guests-button").css("background-color", "lightgreen");
+        $("#confirm-guests-button").css("background-color", "#d1e7dd");
         $("#confirm-guests-button").hover(function(e) {
-            $(this).css("background-color", e.type === "mouseenter" ? "#dee2e6" : "lightgreen");
+            $(this).css("background-color", e.type === "mouseenter" ? "#dee2e6" : "#d1e7dd");
         });
         $("#finish-guests-content").append(`
             <div class="form-group col-12 mb-1">
