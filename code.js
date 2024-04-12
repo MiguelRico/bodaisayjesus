@@ -13,7 +13,7 @@ function updateGuestsContent() {
     $("#carousel-inner").append(`
         <div id="guests-item" class="carousel-item">
             <div class="container" style="height: 100%;">
-                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 100%;">
+                <div class="d-flex flex-wrap align-content-around justify-content-around" style="height: 100%;">
                     <div class="col-12 form_sec_outer_task text-center mb-2">
                         <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
                     </div>
@@ -23,26 +23,10 @@ function updateGuestsContent() {
                         </div>
                     </div>
 
-                    <div class="col-12 form_field_outer">
-                        <div class="d-flex justify-content-between">
-                            <div class="col-6 form_field_outer pt-2 pb-2 text-center"">
-                                <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                            </div>
-
-                            <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                <input type="button" class="btn btn-light" value="Continuar" onclick="nextPage()" />
-                            </div>
-                    </div>
-
-                    <div class="col-12 form_field_outer">
-                    <button class="unclickable carousel-control-prev" type="button" data-bs-target="#vertical-carousel" data-bs-slide="prev">
-                        <span class="clickable carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="unclickable carousel-control-next" type="button" data-bs-target="#vertical-carousel" data-bs-slide="next">
-                        <span class="clickable carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="col-12 form_field_outer pt-2 pb-2">
+                        <div class="d-flex justify-content-center">
+                            <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -92,7 +76,7 @@ function updateGuestsContent() {
         $("#carousel-inner").append(`
             <div id="guests-item-2" class="carousel-item">
                 <div class="container" style="height: 100%;">
-                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 100%;">
+                    <div class="d-flex flex-wrap align-content-around justify-content-around" style="height: 100%;">
                         <div class="col-12 form_sec_outer_task text-center mb-2">
                             <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
                         </div>
@@ -102,22 +86,10 @@ function updateGuestsContent() {
                             </div>
                         </div>
 
-                        <div class="col-12 form_field_outer">
-                            <div class="d-flex justify-content-between">
-                                <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                    <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
-                                </div>
-                                
-                                <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                    <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                                </div>
+                        <div class="col-12 form_field_outer pt-2 pb-2">
+                            <div class="d-flex justify-content-center">
+                                <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
                             </div>
-
-                            <div class="d-flex justify-content-between">
-                                <div class="col-12 form_field_outer pt-2 pb-2">                                
-                                    <input type="button" class="btn btn-light w-100" value="Continuar" onclick="nextPage()" />
-                                </div>
-                            <div>
                         </div>
                     </div>
                 </div>
@@ -184,7 +156,7 @@ function addAllergenicAndTransportPage(position) {
     $("#carousel-inner").append(`
         <div id="allergic-item" class="carousel-item">
             <div class="container" style="height: 100%;">								
-                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 100%;">
+                <div class="d-flex flex-wrap align-content-around justify-content-around" style="height: 100%;">
                     <div class="col-12 form_sec_outer_task text-center mb-4">
                         <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Alergias y transporte</h4>
                     </div>
@@ -217,23 +189,17 @@ function addAllergenicAndTransportPage(position) {
                             </div>
                         </div>
                     </div>
+                    
+                    <div class="col-12 form_field_outer pt-2 pb-2">
+                            <div class="row justify-content-center">
+                                <div class="col-12 pt-2 pb-2 text-center">
+                                    <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
+                                </div>
 
-                    <div class="col-12 form_field_outer">
-                        <div class="d-flex justify-content-between">
-                            <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
+                                <div class="col-12 pt-2 pb-4 text-center">
+                                    <input id="finishGuests" type="button" class="btn btn-light w-50" value="Finalizar" onclick="finishGuests()" />
+                                </div>
                             </div>
-
-                            <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                            </div>
-                        </div>
-
-                        <div class="d-flex justify-content-between">
-                            <div class="col-12 form_field_outer pt-2 pb-2">
-                                <input id="finishGuests" type="button" class="btn btn-light w-100" value="Finalizar" onclick="finishGuests()" />
-                            </div>
-                        </div>
                     </div>
                 </div>
                 
@@ -276,29 +242,21 @@ function finishGuests() {
                         <div id="finish-guests-content" class="row form_field_outer_row border rounded align-items-center pt-2 pb-2">
                         </div>
                     </div>
-                    
-                    <div class="col-12 form_field_outer">
-                        <div class="d-flex justify-content-between">
-                            <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                <input type="button" class="btn btn-light" value="Volver" onclick="prevPage()" />
-                            </div>
 
-                            <div class="col-6 form_field_outer pt-2 pb-2 text-center">
-                                <input type="button" class="btn btn-light" value="Reiniciar" onclick="resetGuestsContent()" />
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex justify-content-between">
-                            <div class="col-12 form_field_outer pt-2 pb-2">
-                                <input type="button" class="btn btn-light w-100" value="Actualizar" onclick="finishGuests()" />
-                            </div>
-                        </div>
+                    <div class="col-12 form_field_outer pt-2 pb-2">
+                            <div class="row justify-content-center">
+                                <div class="col-12 pt-2 pb-2 text-center">
+                                    <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
+                                </div>
 
-                        <div class="d-flex justify-content-between">
-                            <div class="col-12 form_field_outer pt-2 pb-2">
-                                <input id="confirm-guests-button" type="button" class="btn btn-light w-100" value="Enviar" onclick="sendConfirmation()" />
+                                <div class="col-12 pt-2 pb-2 text-center">
+                                    <input type="button" class="btn btn-light w-50" value="Actualizar" onclick="finishGuests()" />
+                                </div>
+
+                                <div class="col-12 pt-2 pb-4 text-center">
+                                <input id="confirm-guests-button" type="button" class="btn btn-light w-50" value="Enviar" onclick="sendConfirmation()" />
+                                </div>
                             </div>
-                        </div>
                     </div>
                     
                 </div>
@@ -312,12 +270,6 @@ function finishGuests() {
         guests.push($(this).val());
     });
 
-    $("#finish-guests-content").append(`
-        <div class="form-group col-12 mb-2">
-            <p class="fw-bold">Invitados:</p>
-        </div>
-    `);
-
     var hasError = false;
     for (let i = 0; i < guests.length; i++) {
         if (typeof guests[i] === 'undefined' || guests[i] == '') {
@@ -327,19 +279,26 @@ function finishGuests() {
     }
 
     if (hasError === true) {
+        $("#confirm-guests-button").css("background-color", "#f8d7da");
         $("#confirm-guests-button").prop("disabled",true);
         $("#finish-guests-content").append(`
-            <div class="form-group col-12 mb-2">
-                <div class="alert alert-danger" role="alert">
-                    No ha informado todos los invitados. Por favor informe los invitados que faltan y actualice la confirmación.
+            <div class="form-group col-12 mb-1">
+                <p class="fw-bold mb-1">Invitados:</p>
+                <div class="alert alert-danger mb-1 p-2" role="alert">
+                No ha informado todos los invitados. Por favor informe los invitados que faltan y actualice la confirmación.
                 </div>
             </div>
         `);
     } else {
+        $("#confirm-guests-button").css("background-color", "lightgreen");
+        $("#confirm-guests-button").hover(function(e) {
+            $(this).css("background-color", e.type === "mouseenter" ? "#dee2e6" : "lightgreen");
+        });
         $("#finish-guests-content").append(`
-            <div class="form-group col-12 mb-2">
-                <div class="alert alert-success" role="alert">
-                    ` + guests.join(', ') + `
+            <div class="form-group col-12 mb-1">
+                <p class="fw-bold mb-1">Invitados:</p>
+                <div class="alert alert-success mb-1 p-2" role="alert">
+                    Todos los invitados informados.
                 </div>
             </div>
         `);
@@ -348,35 +307,65 @@ function finishGuests() {
     var alergias = $('#allergic-item').find('textarea[id="alergias"]').val();
     if (typeof alergias !== 'undefined' && alergias != '') {
         $("#finish-guests-content").append(`
-            <div class="form-group col-12 mb-2" style="display: flex;">
-                <p class="fw-bold">Alergias:</p>
-                <p style="margin-left: 1rem;">` + alergias + `</p>
+            <div class="form-group col-12 mb-1">
+                <p class="fw-bold mb-1">Alergias:</p>
+                <div class="alert alert-success mb-1 p-2" role="alert">
+                    Alergias informadas.
+                </div>
             </div>
         `);
     } else {
         $("#finish-guests-content").append(`
-            <div class="form-group col-12 mb-2" style="display: flex;">
-                <p class="fw-bold mr-2">Alergias:</p>
-                <p style="margin-left: 1rem;">Sin alergias</p>
+            <div class="form-group col-12 mb-1">
+                <p class="fw-bold mb-1">Alergias:</p>
+                <div class="alert alert-warning mb-1 p-2" role="alert">
+                    Sin alergias.
+                </div>
             </div>
         `);
     }
 
     var busIda = $('#allergic-item').find('select[id="busIda"]').val();
-    $("#finish-guests-content").append(`
-        <div class="form-group col-6 mb-2" style="display: flex;">
-            <p class="fw-bold">Bus ida:</p>
-            <p style="margin-left: 1rem;">` + busIda + `</p>
+    if (busIda == 'Si') {
+        $("#finish-guests-content").append(`
+            <div class="form-group col-6 mb-1"">
+                <p class="fw-bold mb-1">Bus ida:</p>
+                <div class="alert alert-success mb-1 p-2" role="alert">
+                    Si.
+                </div>
+            </div>
+        `);
+    } else {
+        $("#finish-guests-content").append(`
+        <div class="form-group col-6 mb-1"">
+            <p class="fw-bold mb-1">Bus ida:</p>
+            <div class="alert alert-warning mb-1 p-2" role="alert">
+                No.
+            </div>
         </div>
     `);
+    }
 
     var busVuelta = $('#allergic-item').find('select[id="busVuelta"]').val();
-    $("#finish-guests-content").append(`
-        <div class="form-group col-6 mb-2" style="display: flex;">
-            <p class="fw-bold">Bus vuelta:</p>
-            <p style="margin-left: 1rem;">` + busVuelta + `</p>
+    if (busVuelta == 'Si') {
+        $("#finish-guests-content").append(`
+            <div class="form-group col-6 mb-1"">
+                <p class="fw-bold mb-1">Bus vuelta:</p>
+                <div class="alert alert-success mb-1 p-2" role="alert">
+                    Si.
+                </div>
+            </div>
+        `);
+    } else {
+        $("#finish-guests-content").append(`
+        <div class="form-group col-6 mb-1"">
+            <p class="fw-bold mb-1">Bus vuelta:</p>
+            <div class="alert alert-warning mb-1 p-2" role="alert">
+                No.
+            </div>
         </div>
     `);
+    }
 
     $('#vertical-carousel').carousel('next');
 }

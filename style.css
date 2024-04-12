@@ -35,6 +35,15 @@ html, body {
   background-size: cover;
 }
 
+.btn {
+  background-color: #f9fafb;
+  border-radius: 1rem !important;
+}
+
+.btn:hover {
+  background-color: #dee2e6;
+}
+
 /*
 .carousel-item-prev:not(.carousel-item-end), .active.carousel-item-start {
   transform: translate3d(0, -100%, 0);
