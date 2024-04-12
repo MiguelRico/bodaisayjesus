@@ -410,11 +410,9 @@ function onSendEmail(response) {
         // Add success page
         $("#carousel-inner").append(`
             <div id="success-item" class="carousel-item active">
-                <div class="container" style="height: 100%;">
-                    <div class="row align-items-center justify-content-center text-center" style="height: 100%;">
-                        <div class="col-12">
-                            <h2 class="card-title fw-bold text-center" style="font-family: myFirstFont;">Gracias por formar parte de un día tan especial.</h2>                            
-                        </div>
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 95%;">
+                    <div class="col-12 form_sec_outer_task text-center">
+                        <h2 class="card-title fw-bold text-center" style="font-family: myFirstFont;">Gracias por formar parte de un día tan especial.</h2>
                     </div>
                 </div>
             </div>
@@ -469,9 +467,15 @@ function addOtherPages() {
     $("#carousel-inner").append(`
         <div id="account-item" class="carousel-item">
             <div class="container" style="height: 100%;">
-                <div class="row align-items-center justify-content-center text-center" style="height: 100%;">
-                    <div class="col-12">
-                        <h5 class="card-title fw-bold text-center" style="font-family: myFirstFont;">Regalo</h5>
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
+                        <h4 class="frm_section_n fw-bold text-center">Regalo</h4>
+                       <!-- <h5 class="card-title fw-bold text-center" style="font-family: myFirstFont;">Regalo</h5> -->
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 75%;">
+                    <div class="col-12 form_sec_outer_task text-center">
                         <img src="./img/cuenta.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
@@ -488,9 +492,15 @@ function addOtherPages() {
     $("#carousel-inner").append(`
         <div id="timeline-item" class="carousel-item">
             <div class="container" style="height: 100%;">
-                <div class="d-flex flex-wrap align-content-center" style="height: 100%;">
-                    <div class="col-12 mb-4">
-                        <h2 class="font-weight-light text-center text-muted py-3">Timeline</h2>
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">                    
+                        <h4 class="frm_section_n fw-bold text-center">Timeline</h4>
+                        <!-- <h2 class="font-weight-light text-center text-muted py-3">Timeline</h2> -->
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 75%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
                         <!-- timeline item 1 -->
                         <div class="row">
                             <!-- timeline item 1 left dot -->
@@ -608,12 +618,18 @@ function addOtherPages() {
     $("#carousel-inner").append(`
         <div id="clock-item" class="carousel-item">
             <div class="container" style="height: 100%;">								
-                <div class="d-flex flex-wrap align-content-center" style="height: 100%;">
-                    <div class="col-12 form_sec_outer_task text-center mb-4">
-                        <h5 class="card-title fw-bold mt-2 mb-2" style="font-family: myFirstFont;">ISA Y JESÚS</h5>
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">                
+                        <h4 class="frm_section_n fw-bold text-center">Isa y Jesús</h4>
+                        <!-- <h5 class="card-title fw-bold mt-2 mb-2" style="font-family: myFirstFont;">ISA Y JESÚS</h5> -->
+                    </div>
+                </div>
+                
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 75%;">
+                    <div class="col-8 form_sec_outer_task text-center mt-2 mb-2">
                         <p id="demo"></p>
                         
-                        <div class="rounded bg-gradient-4 text-white shadow p-5 text-center mb-5">
+                        <div class="rounded bg-gradient-4 text-white shadow p-2 text-center mb-2">
                             <p class="mb-0 font-weight-bold text-uppercase">Te esperamos en...</p>
                             <div id="clock-c" class="countdown py-4"></div>
                         </div>
