@@ -13,16 +13,20 @@ function updateGuestsContent() {
     $("#carousel-inner").append(`
           <div id="guests-item" class="carousel-item">
               <div class="container" style="height: 100%;">
-                  <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                       <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
                           <h4 class="frm_section_n fw-bold text-center">Confirmar invitados</h4>
                       </div>
-                      
+                    </div>
+                    
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 65%;">
                       <div class="col-12 form_field_outer">
                           <div id="guests-content" class="row form_field_outer_row border rounded align-items-center justify-content-around pt-2 pb-2">
                           </div>
-                      </div>
-  
+                      </div>  
+                    </div>
+
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                       <div class="col-12 form_field_outer pb-3">
                           <div class="d-flex justify-content-center">
                               <input type="button" class="btn btn-light w-50" value="Reiniciar" onclick="resetGuestsContent()" />
@@ -156,11 +160,13 @@ function updateGuestsContent() {
     $("#carousel-inner").append(`
           <div id="allergic-item" class="carousel-item">
               <div class="container" style="height: 100%;">								
-                  <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
-                      <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
-                          <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Alergias y transporte</h4>
-                      </div>
-                      
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
+                    <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
+                        <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Alergias y transporte</h4>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 65%;">
                       <div class="col-12 form_field_outer">
                           <div class="row form_field_outer_row border rounded">
                               <div class="form-group col-12 mb-2">
@@ -173,7 +179,7 @@ function updateGuestsContent() {
                       <div class="col-12 form_field_outer mt-2">
                           <div class="row form_field_outer_row border rounded">
                               <div class="form-group col-6 mt-2 mb-2">                            
-                                  <label for="busIda" class="form-label fw-bold">Ida (17:00)</label>
+                                  <label for="busIda" class="form-label fw-bold">Ida (19:30)</label>
                                   <select name="busIda" id="busIda" class="form-select form-select-lg">
                                       <option value="No" selected>No</option>
                                       <option value="Si">Si</option>
@@ -181,7 +187,7 @@ function updateGuestsContent() {
                               </div>
   
                               <div class="form-group col-6 mt-2 mb-2">                            
-                                  <label for="busVuelta" class="form-label fw-bold">Vuelta (06:00)</label>
+                                  <label for="busVuelta" class="form-label fw-bold">Fin de fiesta</label>
                                   <select name="busVuelta" id="busVuelta" class="form-select form-select-lg">
                                       <option value="No" selected>No</option>
                                       <option value="Si">Si</option>
@@ -189,7 +195,9 @@ function updateGuestsContent() {
                               </div>
                           </div>
                       </div>
-                      
+                    </div>
+
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                       <div class="col-12 form_field_outer mb-3">
                               <div class="row justify-content-center">
                                   <div class="col-12 pb-2 text-center">
@@ -233,16 +241,20 @@ function updateGuestsContent() {
     $("#carousel-inner").append(`
           <div id="finish-guests-item" class="carousel-item">
               <div id="finish-guests-container" class="container" style="height: 100%;">
-                  <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                       <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
                           <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
                       </div>
-                      
+                    </div>
+                    
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 65%;">
                       <div class="col-12 form_field_outer">
                           <div id="finish-guests-content" class="row form_field_outer_row border rounded align-items-center pt-2 pb-2">
                           </div>
                       </div>
+                    </div>
   
+                    <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                       <div class="col-12 form_field_outer mb-3">
                           <div class="row justify-content-center">
                               <div class="col-12 mb-2 text-center">
@@ -393,7 +405,7 @@ function updateGuestsContent() {
       To: 'jblandon93@gmail.com',
       //To: 'mrico.dev@gmail.com',
       From: "miguel.rico.vazquez@gmail.com",
-      Subject: "This is the subject",
+      Subject: "Nuevos invitados confirmados!!",
       Body: "- Invitados:<br>" + guests.join('- ') + ".<br><br>- Alergias: " + alergias + ".<br>- Bus ida: " + busIda + ".<br>- Bus vuelta: " + busVuelta
     }).then((response) => {
       return onSendEmail(response)
@@ -404,7 +416,7 @@ function updateGuestsContent() {
         To: 'isabenabat@gmail.com',
         //To: 'mrico.dev@gmail.com',
         From: "miguel.rico.vazquez@gmail.com",
-        Subject: "This is the subject",
+        Subject: "Nuevos invitados confirmados!!",
         Body: "- Invitados:<br>" + guests.join('- ') + ".<br><br>- Alergias: " + alergias + ".<br>- Bus ida: " + busIda + ".<br>- Bus vuelta: " + busVuelta
       }).then((response) => {
         console.log("Correo enviado")
@@ -423,7 +435,8 @@ function updateGuestsContent() {
               <div id="success-item" class="carousel-item active">
                   <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 95%;">
                       <div class="col-12 form_sec_outer_task text-center">
-                          <h2 class="card-title fw-bold text-center" style="font-family: myFirstFont;">Gracias por formar parte de un día tan especial.</h2>
+                          <h2 class="card-title fw-bold text-center">Gracias por formar parte</h2>
+                          <h2 class="card-title fw-bold text-center">de un día tan especial.</h2>
                       </div>
                   </div>
               </div>
@@ -469,7 +482,7 @@ function updateGuestsContent() {
   
   function addOtherPages() {
   
-    // Add carousel indicator for account
+    /*/ Add carousel indicator for account
     $("#vertical-carousel ol").append(`
           <li id="account-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="5"></li>
       `);
@@ -493,10 +506,11 @@ function updateGuestsContent() {
               </div>
           </div>
       `);
+      */
   
     // Add carousel indicator for timeline
     $("#vertical-carousel ol").append(`
-          <li id="timeline-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="6"></li>
+          <li id="timeline-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="5"></li>
       `);
   
     // Add allergic page
@@ -506,7 +520,6 @@ function updateGuestsContent() {
                   <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                       <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">                    
                           <h4 class="frm_section_n fw-bold text-center">Timeline</h4>
-                          <!-- <h2 class="font-weight-light text-center text-muted py-3">Timeline</h2> -->
                       </div>
                   </div>
   
@@ -532,7 +545,7 @@ function updateGuestsContent() {
                               <div class="col py-2">
                                   <div class="card">
                                       <div class="card-body">
-                                          <div class="float-end text-muted">19:00 PM</div>
+                                          <div class="float-end text-muted">18:30 PM</div>
                                           <h4 class="card-title text-muted">Ceremonia</h4>
                                       </div>
                                   </div>
@@ -557,7 +570,7 @@ function updateGuestsContent() {
                               <div class="col py-2">
                                   <div class="card shadow">
                                       <div class="card-body">
-                                          <div class="float-end text-muted">20:30 PM</div>
+                                          <div class="float-end text-muted">21:00 PM</div>
                                           <h4 class="card-title text-muted">Recepción</h4>
                                       </div>
                                   </div>
@@ -582,7 +595,7 @@ function updateGuestsContent() {
                               <div class="col py-2">
                                   <div class="card">
                                       <div class="card-body">
-                                          <div class="float-end text-muted">22:00 PM</div>
+                                          <div class="float-end text-muted">22:30 PM</div>
                                           <h4 class="card-title text-muted">Cena</h4>
                                       </div>
                                   </div>
@@ -622,26 +635,22 @@ function updateGuestsContent() {
   
     // Add carousel indicator for clock
     $("#vertical-carousel ol").append(`
-          <li id="clock-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="7"></li>
+          <li id="clock-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="6"></li>
       `);
   
     // Add account page
     $("#carousel-inner").append(`
           <div id="clock-item" class="carousel-item">
-              <div class="container" style="height: 100%;">								
-                  <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
-                      <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">                
-                          <h4 class="frm_section_n fw-bold text-center">Isa y Jesús</h4>
-                          <!-- <h5 class="card-title fw-bold mt-2 mb-2" style="font-family: myFirstFont;">ISA Y JESÚS</h5> -->
-                      </div>
-                  </div>
-                  
-                  <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 75%;">
+              <div class="container" style="height: 100%;">	
+
+                  <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 85%;">
                       <div class="col-8 form_sec_outer_task text-center mt-2 mb-2">
                           <p id="demo"></p>
                           
-                          <div class="rounded bg-gradient-4 text-white shadow p-2 text-center mb-2">
-                              <p class="mb-0 font-weight-bold text-uppercase">Te esperamos en...</p>
+                          <div class="rounded text-white shadow p-2 text-center mb-2">
+                          <h4 class="frm_section_n fw-bold text-center">
+                          Te esperamos en...
+                          </h4>
                               <div id="clock-c" class="countdown py-4"></div>
                           </div>
                       </div>

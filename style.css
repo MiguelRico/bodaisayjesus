@@ -1,11 +1,12 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: darkgrey;
+  background-color: #8F9779;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: hide-scroll 5s backwards;
+  color:white;
 }
 
 
@@ -23,7 +24,7 @@ html, body {
   margin-left: 0;
 }
 .carousel {
-  border: 8px solid rgb(212, 212, 212);
+  border: 8px solid white;
   border-radius: 8px;
 }
 
