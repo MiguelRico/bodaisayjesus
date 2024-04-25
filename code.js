@@ -80,15 +80,20 @@ function updateGuestsContent() {
       $("#carousel-inner").append(`
               <div id="guests-item-2" class="carousel-item">
                   <div class="container" style="height: 100%;">
-                      <div class="d-flex flex-wrap align-content-between justify-content-around" style="height: 95%;">
+                        <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                           <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
-                              <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Confirmar invitados</h4>
+                              <h4 class="frm_section_n fw-bold text-center">Confirmar invitados</h4>
                           </div>
-                          
+                        </div>
+                
+                        <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 65%;">
                           <div class="col-12 form_field_outer">
                               <div id="guests-content-2" class="row form_field_outer_row border rounded align-items-center justify-content-around pt-2 pb-2">
                               </div>
                           </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
   
                           <div class="col-12 form_field_outer mb-3">
                               <div class="d-flex justify-content-center">
@@ -162,7 +167,7 @@ function updateGuestsContent() {
               <div class="container" style="height: 100%;">								
                 <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
                     <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
-                        <h4 class="frm_section_n fw-bold text-center mt-2 mb-0">Alergias y transporte</h4>
+                        <h4 class="frm_section_n fw-bold text-center">Alergias y transporte</h4>
                     </div>
                 </div>
 
@@ -480,34 +485,7 @@ function updateGuestsContent() {
     }
   }
   
-  function addOtherPages() {
-  
-    /*/ Add carousel indicator for account
-    $("#vertical-carousel ol").append(`
-          <li id="account-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="5"></li>
-      `);
-  
-    // Add account page
-    $("#carousel-inner").append(`
-          <div id="account-item" class="carousel-item">
-              <div class="container" style="height: 100%;">
-                  <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 10%;">
-                      <div class="col-12 form_sec_outer_task text-center mt-2 mb-2">
-                          <h4 class="frm_section_n fw-bold text-center">Regalo</h4>
-                         <!-- <h5 class="card-title fw-bold text-center" style="font-family: myFirstFont;">Regalo</h5> -->
-                      </div>
-                  </div>
-  
-                  <div class="d-flex flex-wrap align-content-center justify-content-around" style="height: 75%;">
-                      <div class="col-12 form_sec_outer_task text-center">
-                          <img src="./img/cuenta.jpg" class="card-img-top" alt="...">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      `);
-      */
-  
+  function addOtherPages() {  
     // Add carousel indicator for timeline
     $("#vertical-carousel ol").append(`
           <li id="timeline-entry" data-bs-target="#vertical-carousel" data-bs-slide-to="5"></li>
@@ -528,15 +506,15 @@ function updateGuestsContent() {
                           <!-- timeline item 1 -->
                           <div class="row">
                               <!-- timeline item 1 left dot -->
-                              <div class="col-auto text-center flex-column d-none d-sm-flex">
-                                  <div class="row h-50">
+                              <div class="col-auto text-center flex-column d-sm-flex">
+                                  <div class="row">
                                       <div class="col">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
                                   <h5 class="m-2">
                                       <span class="badge rounded-pill bg-light border">&nbsp;</span>
                                   </h5>
-                                  <div class="row h-50">
+                                  <div class="row">
                                       <div class="col border-end order">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
@@ -554,15 +532,15 @@ function updateGuestsContent() {
                           <!--/row-->
                           <!-- timeline item 2 -->
                           <div class="row">
-                              <div class="col-auto text-center flex-column d-none d-sm-flex">
-                                  <div class="row h-50">
+                              <div class="col-auto text-center flex-column d-sm-flex">
+                                  <div class="row">
                                       <div class="col border-end">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
                                   <h5 class="m-2">
                                       <span class="badge rounded-pill bg-light border">&nbsp;</span>
                                   </h5>
-                                  <div class="row h-50">
+                                  <div class="row">
                                       <div class="col border-end">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
@@ -579,15 +557,15 @@ function updateGuestsContent() {
                           <!--/row-->
                           <!-- timeline item 3 -->
                           <div class="row">
-                              <div class="col-auto text-center flex-column d-none d-sm-flex">
-                                  <div class="row h-50">
+                              <div class="col-auto text-center flex-column d-sm-flex">
+                                  <div class="row">
                                       <div class="col border-end">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
                                   <h5 class="m-2">
                                       <span class="badge rounded-pill bg-light border">&nbsp;</span>
                                   </h5>
-                                  <div class="row h-50">
+                                  <div class="row">
                                       <div class="col border-end">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
@@ -604,15 +582,15 @@ function updateGuestsContent() {
                           <!--/row-->
                           <!-- timeline item 4 -->
                           <div class="row">
-                              <div class="col-auto text-center flex-column d-none d-sm-flex">
-                                  <div class="row h-50">
+                              <div class="col-auto text-center flex-column d-sm-flex">
+                                  <div class="row">
                                       <div class="col border-end">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
                                   <h5 class="m-2">
                                       <span class="badge rounded-pill bg-light border">&nbsp;</span>
                                   </h5>
-                                  <div class="row h-50">
+                                  <div class="row">
                                       <div class="col">&nbsp;</div>
                                       <div class="col">&nbsp;</div>
                                   </div>
@@ -661,7 +639,7 @@ function updateGuestsContent() {
   
     $('#clock-c').countdown(get15dayFromNow(), function(event) {
       var $this = $(this).html(event.strftime('' +
-        '<span class="h1 font-weight-bold">%D</span> días%!d <br>' +
+        '<span class="h1 font-weight-bold">%D</span> día%!d <br>' +
         '<span class="h1 font-weight-bold">%H</span> horas <br>' +
         '<span class="h1 font-weight-bold">%M</span> minutos <br>' +
         '<span class="h1 font-weight-bold">%S</span> segundos'));
